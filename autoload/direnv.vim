@@ -76,7 +76,7 @@ function! direnv#export_core() abort
     return
   endif
 
-  let l:cmd = [s:direnv_cmd, 'export', 'vim']
+  let l:cmd = ['bash', '-c', 'direnv export vim']
   if has('nvim')
     call jobstart(l:cmd, s:job)
   elseif has('job') && has('channel')
